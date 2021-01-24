@@ -43,6 +43,11 @@ namespace BG
             playerControls.Disable();    
         }
 
+        public void SetTheAnimator()
+        {
+             animatorManager = GetComponentInChildren<AnimatorManager>();            
+        }
+        
         public void HandleAllInputs()
         {
             HandleMovementInput();
