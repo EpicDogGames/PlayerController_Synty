@@ -8,20 +8,22 @@ namespace BG
     {
         PlayerControls playerControls;
         AnimatorManager animatorManager;
-        UIController uiController;
+        PauseManager pauseManager;
 
         public Vector2 movementInput;
+        public Vector2 cameraInput;
+
+        public float cameraInputX;
+        public float cameraInputY;
+
         public float verticalInput;
         public float horizontalInput;
 
         private float moveAmount;
 
-        public bool togglePause_Input;
-        public bool togglePauseFlag;
-
         private void Awake() 
         {
-            uiController = FindObjectOfType<UIController>(); 
+            pauseManager = FindObjectOfType<PauseManager>();
             animatorManager = GetComponentInChildren<AnimatorManager>();   
         }
 
@@ -32,7 +34,8 @@ namespace BG
                 playerControls = new PlayerControls();
 
                 playerControls.PlayerMovement.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
-                playerControls.PlayerAction.TogglePause.performed += i => togglePause_Input = true;
+                playerControls.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
+                playerControls.PlayerAction.PauseGame.performed += _ => DeterminePauseStatus();
             }
 
             playerControls.Enable();
@@ -57,25 +60,25 @@ namespace BG
         {
             verticalInput = movementInput.y;
             horizontalInput = movementInput.x;
+
+            cameraInputX = cameraInput.x;
+            cameraInputY = cameraInput.y;
+
             moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
             animatorManager.UpdateAnimatorValues(0, moveAmount);
         }
 
-        public void HandleTogglePause()
+        private void DeterminePauseStatus()
         {
-            if (togglePause_Input)
+            if (pauseManager.PauseState())
             {
-                togglePauseFlag = !togglePauseFlag;
-
-                if (togglePauseFlag)
-                {
-                    uiController.TogglePauseOn();
-                }
-                else
-                {
-                    uiController.TogglePauseOff();
-                }
+                pauseManager.ResumeGame();
             }
+            else
+            {
+                pauseManager.PauseGame();
+            }
+
         }
     }    
 }

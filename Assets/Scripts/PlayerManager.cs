@@ -7,18 +7,19 @@ namespace BG
     public class PlayerManager : MonoBehaviour
     {
         InputManager inputManager;
+        CameraManager cameraManager;
         PlayerLocomotion playerLocomotion;
 
         private void Awake() 
         {
             inputManager = GetComponent<InputManager>();
+            cameraManager = FindObjectOfType<CameraManager>();
             playerLocomotion = GetComponent<PlayerLocomotion>();
         }
 
         private void Update() 
         {
             inputManager.HandleAllInputs();
-            inputManager.HandleTogglePause();
         }
 
         private void FixedUpdate() 
@@ -28,7 +29,7 @@ namespace BG
 
         private void LateUpdate() 
         {
-            inputManager.togglePause_Input = false;    
+            cameraManager.HandleAllCameraMovement();    
         }
     }
 }
