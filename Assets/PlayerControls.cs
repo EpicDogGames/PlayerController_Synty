@@ -215,6 +215,44 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ]
         },
         {
+            ""name"": ""Player Action"",
+            ""id"": ""16ca4d3e-b1c9-455a-b368-98c817955637"",
+            ""actions"": [
+                {
+                    ""name"": ""PauseGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""298c32fd-7ef7-46e4-85a2-59b4f001a694"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d5ae14e1-2367-47bc-b7be-d671e18729a6"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PauseGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0611224c-6650-45a3-bfba-054afd75c484"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PauseGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""UI"",
             ""id"": ""236c72cf-b93e-48a8-af1c-5d75597133c3"",
             ""actions"": [
@@ -300,9 +338,75 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""DPad"",
+                    ""id"": ""0081444c-812d-4465-8a81-96cdcaecf79b"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""60976c0e-e6bb-414f-889d-612e76114240"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""6b3966e7-f8b3-49a9-8131-9984509f3243"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""7b3b564d-014a-49cb-bec7-4fec41b9a24d"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""a23e3d46-881c-4925-9d2f-547aef3204f2"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""0e636827-f489-4367-9024-a4a74b32d817"",
                     ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""50e4d41c-4b70-443e-8192-123989e7d3a1"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -320,50 +424,15 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Player Action"",
-            ""id"": ""16ca4d3e-b1c9-455a-b368-98c817955637"",
-            ""actions"": [
-                {
-                    ""name"": ""TogglePause"",
-                    ""type"": ""Button"",
-                    ""id"": ""b2f07d73-597a-4418-b989-d620bab135a1"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""PauseGame"",
-                    ""type"": ""Button"",
-                    ""id"": ""298c32fd-7ef7-46e4-85a2-59b4f001a694"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""67811476-e29d-499c-ab1f-e9654d6ce5d8"",
-                    ""path"": ""<Keyboard>/p"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""TogglePause"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d5ae14e1-2367-47bc-b7be-d671e18729a6"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""id"": ""297e9822-3dfd-4047-8acf-614edd5bdd0f"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PauseGame"",
+                    ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -376,15 +445,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerMovement = asset.FindActionMap("Player Movement", throwIfNotFound: true);
         m_PlayerMovement_Movement = m_PlayerMovement.FindAction("Movement", throwIfNotFound: true);
         m_PlayerMovement_Camera = m_PlayerMovement.FindAction("Camera", throwIfNotFound: true);
+        // Player Action
+        m_PlayerAction = asset.FindActionMap("Player Action", throwIfNotFound: true);
+        m_PlayerAction_PauseGame = m_PlayerAction.FindAction("PauseGame", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Move = m_UI.FindAction("Move", throwIfNotFound: true);
         m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
         m_UI_Cancel = m_UI.FindAction("Cancel", throwIfNotFound: true);
-        // Player Action
-        m_PlayerAction = asset.FindActionMap("Player Action", throwIfNotFound: true);
-        m_PlayerAction_TogglePause = m_PlayerAction.FindAction("TogglePause", throwIfNotFound: true);
-        m_PlayerAction_PauseGame = m_PlayerAction.FindAction("PauseGame", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -472,6 +540,39 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     }
     public PlayerMovementActions @PlayerMovement => new PlayerMovementActions(this);
 
+    // Player Action
+    private readonly InputActionMap m_PlayerAction;
+    private IPlayerActionActions m_PlayerActionActionsCallbackInterface;
+    private readonly InputAction m_PlayerAction_PauseGame;
+    public struct PlayerActionActions
+    {
+        private @PlayerControls m_Wrapper;
+        public PlayerActionActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @PauseGame => m_Wrapper.m_PlayerAction_PauseGame;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerAction; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlayerActionActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerActionActions instance)
+        {
+            if (m_Wrapper.m_PlayerActionActionsCallbackInterface != null)
+            {
+                @PauseGame.started -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnPauseGame;
+                @PauseGame.performed -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnPauseGame;
+                @PauseGame.canceled -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnPauseGame;
+            }
+            m_Wrapper.m_PlayerActionActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @PauseGame.started += instance.OnPauseGame;
+                @PauseGame.performed += instance.OnPauseGame;
+                @PauseGame.canceled += instance.OnPauseGame;
+            }
+        }
+    }
+    public PlayerActionActions @PlayerAction => new PlayerActionActions(this);
+
     // UI
     private readonly InputActionMap m_UI;
     private IUIActions m_UIActionsCallbackInterface;
@@ -520,61 +621,19 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
-
-    // Player Action
-    private readonly InputActionMap m_PlayerAction;
-    private IPlayerActionActions m_PlayerActionActionsCallbackInterface;
-    private readonly InputAction m_PlayerAction_TogglePause;
-    private readonly InputAction m_PlayerAction_PauseGame;
-    public struct PlayerActionActions
-    {
-        private @PlayerControls m_Wrapper;
-        public PlayerActionActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @TogglePause => m_Wrapper.m_PlayerAction_TogglePause;
-        public InputAction @PauseGame => m_Wrapper.m_PlayerAction_PauseGame;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerAction; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerActionActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerActionActions instance)
-        {
-            if (m_Wrapper.m_PlayerActionActionsCallbackInterface != null)
-            {
-                @TogglePause.started -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnTogglePause;
-                @TogglePause.performed -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnTogglePause;
-                @TogglePause.canceled -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnTogglePause;
-                @PauseGame.started -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnPauseGame;
-                @PauseGame.performed -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnPauseGame;
-                @PauseGame.canceled -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnPauseGame;
-            }
-            m_Wrapper.m_PlayerActionActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @TogglePause.started += instance.OnTogglePause;
-                @TogglePause.performed += instance.OnTogglePause;
-                @TogglePause.canceled += instance.OnTogglePause;
-                @PauseGame.started += instance.OnPauseGame;
-                @PauseGame.performed += instance.OnPauseGame;
-                @PauseGame.canceled += instance.OnPauseGame;
-            }
-        }
-    }
-    public PlayerActionActions @PlayerAction => new PlayerActionActions(this);
     public interface IPlayerMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnCamera(InputAction.CallbackContext context);
+    }
+    public interface IPlayerActionActions
+    {
+        void OnPauseGame(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnSubmit(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
-    }
-    public interface IPlayerActionActions
-    {
-        void OnTogglePause(InputAction.CallbackContext context);
-        void OnPauseGame(InputAction.CallbackContext context);
     }
 }

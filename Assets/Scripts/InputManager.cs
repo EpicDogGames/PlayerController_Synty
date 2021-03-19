@@ -19,7 +19,7 @@ namespace BG
         public float verticalInput;
         public float horizontalInput;
 
-        private float moveAmount;
+        public float moveAmount;
 
         private void Awake() 
         {
@@ -46,7 +46,7 @@ namespace BG
             playerControls.Disable();    
         }
 
-        public void SetTheAnimator()
+        public void SetTheAnimatorManager()
         {
              animatorManager = GetComponentInChildren<AnimatorManager>();            
         }

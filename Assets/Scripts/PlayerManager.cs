@@ -6,12 +6,16 @@ namespace BG
 {
     public class PlayerManager : MonoBehaviour
     {
+        Animator animator;
         InputManager inputManager;
         CameraManager cameraManager;
         PlayerLocomotion playerLocomotion;
 
+        public bool isInteracting;
+
         private void Awake() 
         {
+            animator = GetComponentInChildren<Animator>();
             inputManager = GetComponent<InputManager>();
             cameraManager = FindObjectOfType<CameraManager>();
             playerLocomotion = GetComponent<PlayerLocomotion>();
@@ -29,7 +33,10 @@ namespace BG
 
         private void LateUpdate() 
         {
-            cameraManager.HandleAllCameraMovement();    
+            cameraManager.HandleAllCameraMovement();   
+
+            isInteracting = animator.GetBool("isInteracting");
+            Debug.Log("Is interacting state: " + isInteracting);
         }
     }
 }

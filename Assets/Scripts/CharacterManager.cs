@@ -7,7 +7,6 @@ namespace BG
     public class CharacterManager : MonoBehaviour
     {
         public GameObject[] characters;
-        public Animator animator;
 
         public void SwitchCharacters(int index)
         {
@@ -18,7 +17,7 @@ namespace BG
             }
 
             characters[index].SetActive(true);
-            characters[index].GetComponentInParent<InputManager>().SetTheAnimator();
+            characters[index].GetComponentInParent<InputManager>().SetTheAnimatorManager();
         }
     }
 }

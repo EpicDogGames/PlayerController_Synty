@@ -11,7 +11,7 @@ namespace BG
         public Transform targetTransform;                           // object camera will follow
         public Transform cameraPivot;                               // object camera uses to pivot (look up and down)
         public Transform cameraTransform;                           // transform of the actual camera object in the scene
-        public LayerMask collisionLayers;                           // layers we want camera to collide with
+        public LayerMask collisionLayers;                           // layers we want camera to collide with (default and player for example)
         private float defaultPosition;
         private Vector3 cameraFollowVelocity = Vector3.zero;
         private Vector3 cameraVectorPosition;

@@ -18,6 +18,13 @@ namespace BG
             vertical = Animator.StringToHash("Vertical");
         }
 
+        public void PlayTargetAnimation(string targetAnimation, bool isInteracting)
+        {
+            // if isInteracting is true, player can't move or rotate while the animation is running
+            animator.SetBool("isInteracting", isInteracting);
+            animator.CrossFade(targetAnimation, 0.2f);
+        }
+
         public void UpdateAnimatorValues(float horizontalMovement, float verticalMovement)
         {
             // animation snapping
