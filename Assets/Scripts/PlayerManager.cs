@@ -15,10 +15,10 @@ namespace BG
 
         private void Awake() 
         {
-            animator = GetComponentInChildren<Animator>();
-            inputManager = GetComponent<InputManager>();
+            animator = GetComponent<Animator>();
+            inputManager = GetComponentInParent<InputManager>();
             cameraManager = FindObjectOfType<CameraManager>();
-            playerLocomotion = GetComponent<PlayerLocomotion>();
+            playerLocomotion = GetComponentInParent<PlayerLocomotion>();
         }
 
         private void Update() 
@@ -36,7 +36,6 @@ namespace BG
             cameraManager.HandleAllCameraMovement();   
 
             isInteracting = animator.GetBool("isInteracting");
-            Debug.Log("Is interacting state: " + isInteracting);
         }
     }
 }

@@ -77,7 +77,6 @@ namespace BG
             }
             #endregion
 
-            Debug.Log("Current Animator: " + animator.gameObject.name);
             animator.SetFloat(horizontal, snappedHorizontal, 0.1f, Time.deltaTime);
             animator.SetFloat(vertical, snappedVertical, 0.1f, Time.deltaTime);
         }

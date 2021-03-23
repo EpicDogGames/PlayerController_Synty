@@ -48,7 +48,7 @@ namespace BG
 
         public void SetTheAnimatorManager()
         {
-             animatorManager = GetComponentInChildren<AnimatorManager>();            
+            animatorManager = GetComponentInChildren<AnimatorManager>();         
         }
         
         public void HandleAllInputs()

@@ -32,11 +32,18 @@ namespace BG
 
         private void Awake() 
         {
-            playerManager = GetComponent<PlayerManager>();
+            playerManager = GetComponentInChildren<PlayerManager>();
             animatorManager = GetComponentInChildren<AnimatorManager>();
             inputManager = GetComponent<InputManager>();
             playerRigidbody = GetComponent<Rigidbody>();
             cameraObject = Camera.main.transform;
+        }
+
+        public void SetTheAnimatorManager()
+        {
+            animatorManager = GetComponentInChildren<AnimatorManager>();
+            playerManager = GetComponentInChildren<PlayerManager>();
+            Debug.Log("Animator Manager: " + animatorManager.gameObject.name);
         }
 
         public void HandleAllMovement()
@@ -46,7 +53,6 @@ namespace BG
             // if isInteracting is true, don't want player to move or rotate so just return from the method
             if (playerManager.isInteracting)
             {
-                Debug.Log("Locomotion: " + playerManager.isInteracting);
                 return;
             }
 
@@ -95,6 +101,8 @@ namespace BG
 
         private void HandleFallingAndLanding()
         {
+            //Debug.Log("Is Grounded: " + isGrounded + " Is Interacting: " + playerManager.isInteracting);
+
             RaycastHit hit;
             Vector3 rayCastOrigin = transform.position;                 // starts raycast at the bottom of player's feet
             rayCastOrigin.y = rayCastOrigin.y + rayCastHeightOffset;    // make sure raycast starts above the ground so sphere can detect what is at player's feet
@@ -117,6 +125,7 @@ namespace BG
                 // player is hitting ground, so switch to land animation
                 if (!isGrounded && !playerManager.isInteracting)
                 {
+                    Debug.Log("Called landing animation");
                     animatorManager.PlayTargetAnimation("Land", true);
                 }
                 inAirTimer = 0;

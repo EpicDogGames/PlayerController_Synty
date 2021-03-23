@@ -18,6 +18,7 @@ namespace BG
 
             characters[index].SetActive(true);
             characters[index].GetComponentInParent<InputManager>().SetTheAnimatorManager();
+            characters[index].GetComponentInParent<PlayerLocomotion>().SetTheAnimatorManager();
         }
     }
 }
